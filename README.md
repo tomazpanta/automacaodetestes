@@ -92,8 +92,3 @@ cypress/
   ├── support/            # Comandos customizados e configurações
   └── fixtures/           # Massas de dados (se necessário)
 ```
-
------
-
-```
-```

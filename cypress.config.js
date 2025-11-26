@@ -6,7 +6,7 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 module.exports = defineConfig({
   e2e: {
     specPattern: "**/*.feature",
-    chromeWebSecurity: false, // <-- ADICIONE ISSO SE O LOGIN AINDA DER ERRO
+    chromeWebSecurity: false, 
     setupNodeEvents(on, config) {
       on(
         "file:preprocessor",

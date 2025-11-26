@@ -17,17 +17,16 @@ Then("eu devo ver o logo da Wikipédia", () => {
   cy.get('.mw-wiki-logo, .mw-logo-icon').should('be.visible');
 });
 
-// --- CENÁRIOS 2 e 3: BUSCA (CORREÇÃO DO ERRO DE DETACHED DOM) ---
+// --- CENÁRIOS 2 e 3: BUSCA 
 When("eu pesquiso por {string} na barra de busca", (termo) => {
   // 1. Primeiro pegamos o input e limpamos.
   // Usamos {force: true} para garantir que limpa mesmo se tiver algo na frente.
   cy.get('input[name="search"]').first().should('exist').clear({force: true});
   
-  // 2. Espera pequena para a Wikipédia processar a limpeza (evita o erro de DOM)
+  // 2. Espera pequena para a Wikipédia processar a limpeza 
   cy.wait(500);
 
   // 3. PEGA O ELEMENTO DE NOVO e digita.
-  // Isso é crucial! Se usássemos o chain anterior, daria o erro "detached".
   cy.get('input[name="search"]').first().type(termo, {force: true});
 
   // 4. Envia o formulário
